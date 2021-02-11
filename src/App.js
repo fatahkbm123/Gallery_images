@@ -1,23 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { CssBaseline, makeStyles } from "@material-ui/core";
+import ImageSearch from "./components/ImageSearch";
+
+const useStyles = makeStyles({
+  root: {
+    height: "90vh",
+    background: `url(${process.env.PUBLIC_URL + "/assets/bg2.jpg"})`,
+    backgroundSize: "cover",
+    backgroundRepeat: "no-repeat",
+  },
+});
 
 function App() {
+  const classes = useStyles();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={classes.root}>
+      <CssBaseline />
+      <ImageSearch />
     </div>
   );
 }
